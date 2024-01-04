@@ -34,6 +34,8 @@ function inviaRichiesta(sendMail, email, name, telephone, contact) {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
+                'X-Frontend': 'vincenzo',
+                // 'X-Frontend': 'paolo',
             },
             body: JSON.stringify(dati)
         })
