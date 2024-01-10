@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    background: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;  
+}
+
+/******************************* General Style Form *******************************/
+
+.container_form{
+    background-color: #ffffff5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid#000000;
+    border-radius: 5%;
+    margin-top: 8rem;
+    margin-inline: 10rem;
+    padding: 4rem;
+    /* sfocatura */
+    backdrop-filter: blur(4px);
+    color: #000000;
+}
+
+.title{
+    color: #000000;
+}
+
+.form{
+    width: 100%;
+}
+
+.form .input{
+    width: 100%;
+}
+
+.input_label{
+    width: 100%;
+   
+    font-weight: 600;
+}
+
+.conditions{
+    display: flex;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin: 0rem 0.3rem 0.2rem;
+}
+
+.button{
+    width: 100%;
+}
+
+/**********************************************************************************/
+

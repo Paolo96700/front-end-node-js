@@ -30,21 +30,32 @@ function inviaRichiesta(sendMail, email, name, telephone, contact) {
 
         // Esegui la richiesta POST utilizzando Axios
         axios.post('http://localhost:8000/api/mail/createMail', dati, {
-            method: 'POST',
+            method: 'POST',    
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'X-Frontend': 'vincenzo',
-                // 'X-Frontend': 'paolo',
+                // 'X-Frontend': 'vincenzo',
+                'X-Frontend': 'paolo',
             },
             body: JSON.stringify(dati)
+            
         })
         .then(response => {
+            console.log(response.data);
             alert(response.data.message);
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+            console.error('Errore Axios:', error);
+            console.error(error.response ? error.response.data.error : 'Errore sconosciuto'); 
+            
+            if (error.response && error.response.data.details) {
+              console.error('Dettagli dell\'errore:', error.response.data.details);
+            }
+            alert(error);
+             
+
+            // Restituisci un messaggio di errore
+            return response('Errore interno del server', 500);
         });
 
     }else{
